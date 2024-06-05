@@ -1,0 +1,9 @@
+.hero {
+  background-image: url(/public/images/home.png);
+  background-position: 95%;
+  background-size: cover;
+
+  &__content {
+    padding: 188px 80px 126px 20px;
+  }
+}
