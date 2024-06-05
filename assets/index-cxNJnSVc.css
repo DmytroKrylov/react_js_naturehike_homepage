@@ -1,1 +1,8 @@
-.hero{background-image:url(/react_js_naturehike_homepage/assets/home-DisRLMvb.png);background-position:95%;background-size:cover}.hero__content{padding:188px 80px 126px 20px}
+.hero {
+  background-image: url(/react_js_naturehike_homepage/assets/home-DisRLMvb.png);
+  background-position: 95%;
+  background-size: cover;
+}
+.hero__content {
+  padding: 188px 80px 126px 20px;
+}
