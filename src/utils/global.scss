@@ -1,9 +1,16 @@
+@mixin on-desktop {
+  @media (min-width: 1270px) {
+    @content;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Okta Neue", sans-serif;
   font-weight: 300;
+  min-width: 360px;
 }
 
 h1,
@@ -29,4 +36,8 @@ ul {
 
 .container {
   padding-inline: 20px;
+
+  @include on-desktop {
+    padding-inline: 65px;
+  }
 }
