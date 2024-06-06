@@ -1,0 +1,112 @@
+.footer {
+  background-image: url(/public/images/footer.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &__content {
+    padding-block: 35px;
+  }
+
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+  }
+
+  &__top {
+    display: flex;
+    gap: 150px;
+  }
+
+  &__center {
+    display: flex;
+    gap: 75px;
+  }
+
+  &__bottom {
+    margin-bottom: 25px;
+  }
+
+  &__basement {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  &__linkBig {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21.5px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &__title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21.5px;
+    color: white;
+  }
+
+  &__linkSmall {
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 16.13px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__textUnderline {
+    text-decoration: underline;
+  }
+
+  &__tel {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 21.5px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &__fb {
+    background-image: url(/public/images/fb.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 26px;
+    height: 26px;
+    display: block;
+  }
+
+  &__instagram {
+    background-image: url(/public/images/intagram.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 26px;
+    height: 26px;
+    display: block;
+  }
+
+  &__social {
+    display: flex;
+    gap: 15px;
+  }
+
+  &__language {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__lang {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21.5px;
+    color: rgba(255, 255, 255, 1);
+  }
+
+  &__span {
+    color: rgba(255, 255, 255, 1);
+  }
+}
