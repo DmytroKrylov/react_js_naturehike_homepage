@@ -4,9 +4,7 @@ export const News = () => {
   return (
     <section className="news">
       <div className="news__content container">
-        <h2 className="news__title">
-          Новости <br /> Обзоры
-        </h2>
+        <h2 className="news__title">Новости / Обзоры</h2>
         <ul className="news__list">
           <li className="news__item">
             <a className="news__img" href="#"></a>

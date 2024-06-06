@@ -101,7 +101,7 @@ export const Footer = () => {
           </div>
           <div className="footer__bottom">
             <ul className="footer__list">
-              <li>
+              <li className="footer__telPC">
                 <a className="footer__tel" href="tel:+380673343459">
                   +380 (67) 334 34 59
                 </a>

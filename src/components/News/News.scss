@@ -1,12 +1,25 @@
+@mixin on-desktop {
+  @media (min-width: 1270px) {
+    @content;
+  }
+}
+
 .news {
   padding-bottom: 40px;
 
   &__title {
     font-family: "Intro Demo";
+    font-weight: 400;
     font-size: 30px;
     line-height: 32.25px;
     color: rgba(79, 31, 35, 1);
     margin-bottom: 15px;
+
+    @include on-desktop {
+      font-size: 60px;
+      line-height: 64.5px;
+      margin-bottom: 30px;
+    }
   }
 
   &__list {

@@ -1,3 +1,9 @@
+@mixin on-desktop {
+  @media (min-width: 1270px) {
+    @content;
+  }
+}
+
 .footer {
   background-image: url(/public/images/footer.png);
   background-size: cover;
@@ -11,6 +17,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+
+    @include on-desktop {
+      justify-content: space-between;
+    }
   }
 
   &__top {
@@ -25,12 +35,21 @@
 
   &__bottom {
     margin-bottom: 25px;
+
+    @include on-desktop {
+      margin-bottom: 50px;
+    }
   }
 
   &__basement {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include on-desktop {
+      justify-content: end;
+      gap: 120px;
+    }
   }
 
   &__list {
@@ -69,6 +88,12 @@
     font-size: 20px;
     line-height: 21.5px;
     color: rgba(255, 255, 255, 1);
+  }
+
+  &__telPC {
+    @include on-desktop {
+      margin-bottom: 40px;
+    }
   }
 
   &__fb {
