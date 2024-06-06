@@ -18,6 +18,10 @@ export const About = () => {
         <a className="about__link" href="#">
           О Бренде
         </a>
+        <div className="about__frame">
+          <span className="about__video"></span>
+          <span className="about__video1"></span>
+        </div>
       </div>
     </section>
   );

@@ -59,4 +59,27 @@
     background-color: #e60012;
     padding: 5px 35px;
   }
+
+  &__frame {
+    margin-top: 35px;
+    display: flex;
+    gap: 15px;
+  }
+
+  &__video {
+    background-image: url(/public/images/video.png);
+    background-size: cover;
+    background-size: cover;
+    width: 165px;
+    height: 80px;
+    display: block;
+  }
+
+  &__video1 {
+    background-image: url(/public/images/video1.png);
+    background-size: cover;
+    width: 165px;
+    height: 80px;
+    display: block;
+  }
 }

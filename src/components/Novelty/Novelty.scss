@@ -1,8 +1,54 @@
-// .novetly {
-//   &__img {
-//     display: block;
-//     background-image: url(/public/images/img.png);
-//     width: 280px;
-//     height: 180px;
-//   }
-// }
+.novetly {
+  padding: 40px 0;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__img {
+    display: block;
+    background-image: url(/public/images/mob.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 180px;
+  }
+  &__img1 {
+    display: block;
+    background-image: url(/public/images/mob1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 180px;
+  }
+  &__img2 {
+    display: block;
+    background-image: url(/public/images/mob2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 180px;
+  }
+
+  &__title {
+    position: absolute;
+    top: 10px;
+    left: -15px;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 32.25px;
+    color: white;
+    background-color: rgba(68, 0, 5, 0.7);
+    padding-left: 25px;
+    padding-right: 120px;
+    padding-block: 5px;
+  }
+}
