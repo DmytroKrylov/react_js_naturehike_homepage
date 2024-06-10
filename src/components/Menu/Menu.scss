@@ -1,0 +1,84 @@
+.menu {
+  position: relative;
+  background-color: #8b0000; /* Задайте потрібний вам колір фону */
+  color: white;
+  width: 100%; /* Адаптація під мобільний екран */
+}
+
+.menu__toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.menu__toggle-icon {
+  font-size: 1.5rem;
+}
+
+.menu__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.7); /* Темний фон для меню */
+  position: relative;
+}
+
+.menu__list.open {
+  max-height: 300px; /* Задайте максимальну висоту для відкритого стану меню */
+  overflow-y: auto;
+}
+
+.menu__item {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.menu__item a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu__item:hover {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Зміна кольору фону при наведенні */
+}
+
+/* Додайте стиль для скролбару */
+.menu__list::-webkit-scrollbar {
+  width: 8px; /* Ширина скролбару */
+}
+
+.menu__list::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.5); /* Колір "хваталки" */
+  border-radius: 4px;
+}
+
+/* Стиль для індикатора прокрутки */
+.menu__scroll-indicator {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.menu__list.open .menu__scroll-indicator {
+  opacity: 1;
+}

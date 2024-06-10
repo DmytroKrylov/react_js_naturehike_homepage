@@ -1,0 +1,86 @@
+@mixin on-desktop {
+  @media (min-width: 1270px) {
+    @content;
+  }
+}
+
+@mixin on-mobile {
+  @media (max-width: 1269px) {
+    @content;
+  }
+}
+
+@include on-mobile {
+  .category {
+    display: none;
+  }
+}
+
+@include on-desktop {
+  .category {
+    &__content {
+      padding-block: 30px;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__img {
+      background-image: url(/public/images/cat.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 185px;
+      height: 255px;
+      display: block;
+      opacity: 50%;
+      transition: all 0.5s;
+
+      &:hover {
+        opacity: 100%;
+        transform: scale(1.1);
+        transition: all 0.5s;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        border-radius: 15%;
+      }
+
+      &--1 {
+        background-image: url(/public/images/cat1.png);
+      }
+
+      &--2 {
+        background-image: url(/public/images/cat2.png);
+      }
+
+      &--3 {
+        background-image: url(/public/images/cat3.png);
+      }
+
+      &--4 {
+        background-image: url(/public/images/cat4.png);
+      }
+
+      &--5 {
+        background-image: url(/public/images/cat5.png);
+      }
+    }
+
+    &__item {
+      position: relative;
+    }
+
+    &__title {
+      font-family: "Intro Demo";
+      font-weight: 400;
+      font-size: 20px;
+      line-height: 21.5px;
+      text-align: center;
+      color: white;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+    }
+  }
+}
