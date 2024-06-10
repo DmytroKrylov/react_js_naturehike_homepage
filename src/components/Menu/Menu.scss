@@ -1,84 +1,93 @@
+@mixin on-desktop {
+  @media (min-width: 1270px) {
+    @content;
+  }
+}
+
 .menu {
   position: relative;
-  background-color: #8b0000; /* Задайте потрібний вам колір фону */
   color: white;
   width: 100%; /* Адаптація під мобільний екран */
-}
 
-.menu__toggle {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px;
-  cursor: pointer;
-}
+  @include on-desktop {
+    display: none;
+  }
 
-.menu__toggle-icon {
-  font-size: 1.5rem;
-}
+  &__section {
+    background-image: url(/public/images/home.png);
+    background-position-x: center;
+    background-position-y: bottom;
+  }
 
-.menu__list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease;
-  background-color: rgba(0, 0, 0, 0.7); /* Темний фон для меню */
-  position: relative;
+  &__toggle {
+    background-color: rgba(68, 0, 5, 0.7);
+    padding-inline: 20px;
+    cursor: pointer;
+  }
+
+  &__button {
+    display: inline-flex;
+    gap: 5px;
+    font-size: 13px;
+    line-height: 14px;
+    font-weight: 700;
+    background-color: #e60012;
+    padding: 15px;
+
+    &::before {
+      content: "";
+      background-image: url(/public/images/cube.png);
+      background-repeat: no-repeat;
+      background-size: contain;
+      display: block;
+      width: 18px;
+      height: 14px;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: rgba(68, 0, 5, 0.7);
+    position: relative;
+
+    &::-webkit-scrollbar {
+      width: 7px; /* Ширина скролбару */
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: white;
+      border-radius: 5px;
+    }
+  }
+
+  &__item {
+    padding-block: 2.5px;
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: #e60012;
+      border-radius: 15px;
+      margin-left: 30px;
+      transition: all 0.5s;
+    }
+  }
+
+  &__link {
+    font-size: 15px;
+    line-height: 16.13px;
+    color: white;
+    margin-left: 15px;
+  }
 }
 
 .menu__list.open {
-  max-height: 300px; /* Задайте максимальну висоту для відкритого стану меню */
+  max-height: 150px; /* Задайте максимальну висоту для відкритого стану меню */
   overflow-y: auto;
-}
-
-.menu__item {
-  padding: 10px;
-  border-bottom: 1px solid #ddd;
-}
-
-.menu__item a {
-  color: white;
-  text-decoration: none;
-}
-
-.menu__item:hover {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.1
-  ); /* Зміна кольору фону при наведенні */
-}
-
-/* Додайте стиль для скролбару */
-.menu__list::-webkit-scrollbar {
-  width: 8px; /* Ширина скролбару */
-}
-
-.menu__list::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.5); /* Колір "хваталки" */
-  border-radius: 4px;
-}
-
-/* Стиль для індикатора прокрутки */
-.menu__scroll-indicator {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 5px;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent,
-    rgba(255, 255, 255, 0.5),
-    transparent
-  );
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.menu__list.open .menu__scroll-indicator {
-  opacity: 1;
+  padding-inline: 20px;
+  padding-block: 10px;
 }
