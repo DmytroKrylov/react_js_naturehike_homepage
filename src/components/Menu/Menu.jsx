@@ -12,7 +12,7 @@ export const Menu = () => {
 
   return (
     <section className="menu__section">
-      <div className="menu">
+      <div className="menu container">
         <div className="menu__toggle" onClick={toggleMenu}>
           <span className="menu__button">Каталог товаров</span>
         </div>

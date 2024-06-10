@@ -7,7 +7,7 @@
 .menu {
   position: relative;
   color: white;
-  width: 100%; /* Адаптація під мобільний екран */
+  width: 100%;
 
   @include on-desktop {
     display: none;
@@ -15,13 +15,21 @@
 
   &__section {
     background-image: url(/public/images/home.png);
-    background-position-x: center;
-    background-position-y: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: 35%;
+    position: relative;
+
+    &::before {
+      content: "";
+      background-color: rgba(68, 0, 5, 0.7);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
   }
 
   &__toggle {
-    background-color: rgba(68, 0, 5, 0.7);
-    padding-inline: 20px;
     cursor: pointer;
   }
 
@@ -43,6 +51,10 @@
       width: 18px;
       height: 14px;
     }
+
+    // @include on-desktop {
+    //   padding-block: 30px;
+    // }
   }
 
   &__list {
@@ -52,17 +64,20 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    background-color: rgba(68, 0, 5, 0.7);
     position: relative;
 
     &::-webkit-scrollbar {
-      width: 7px; /* Ширина скролбару */
+      width: 6px;
     }
 
     &::-webkit-scrollbar-thumb {
       background-color: white;
       border-radius: 5px;
     }
+
+    // @include on-desktop {
+    //   display: flex;
+    // }
   }
 
   &__item {
@@ -86,8 +101,7 @@
 }
 
 .menu__list.open {
-  max-height: 150px; /* Задайте максимальну висоту для відкритого стану меню */
+  max-height: 150px;
   overflow-y: auto;
-  padding-inline: 20px;
   padding-block: 10px;
 }
