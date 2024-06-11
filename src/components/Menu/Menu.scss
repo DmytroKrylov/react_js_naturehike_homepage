@@ -7,10 +7,11 @@
 .menu {
   position: relative;
   color: white;
-  width: 100%;
 
   @include on-desktop {
-    display: none;
+    display: flex;
+    align-items: center;
+    gap: 70px;
   }
 
   &__section {
@@ -31,6 +32,11 @@
 
   &__toggle {
     cursor: pointer;
+
+    &.disabled {
+      cursor: default;
+      pointer-events: none;
+    }
   }
 
   &__button {
@@ -41,6 +47,7 @@
     font-weight: 700;
     background-color: #e60012;
     padding: 15px;
+    align-items: center;
 
     &::before {
       content: "";
@@ -52,9 +59,12 @@
       height: 14px;
     }
 
-    // @include on-desktop {
-    //   padding-block: 30px;
-    // }
+    @include on-desktop {
+      font-size: 20px;
+      line-height: 21.5px;
+      font-weight: 500;
+      padding: 20px;
+    }
   }
 
   &__list {
@@ -73,11 +83,18 @@
     &::-webkit-scrollbar-thumb {
       background-color: white;
       border-radius: 5px;
+
+      @include on-desktop {
+        display: none;
+      }
     }
 
-    // @include on-desktop {
-    //   display: flex;
-    // }
+    @include on-desktop {
+      max-height: none;
+      overflow: visible;
+      display: flex;
+      gap: 70px;
+    }
   }
 
   &__item {
@@ -89,6 +106,16 @@
       border-radius: 15px;
       margin-left: 30px;
       transition: all 0.5s;
+      width: 50%;
+
+      @include on-desktop {
+        margin: 0;
+
+        &:hover {
+          background-color: unset;
+          transform: scale(1.2);
+        }
+      }
     }
   }
 
@@ -97,11 +124,24 @@
     line-height: 16.13px;
     color: white;
     margin-left: 15px;
+
+    @include on-desktop {
+      font-size: 20px;
+      line-height: 21.5px;
+      font-weight: 500;
+      margin-left: 0;
+      transition: all 0.5s;
+
+      &:hover {
+        color: #e60012;
+        transition: all 0.5s;
+      }
+    }
   }
 }
 
 .menu__list.open {
   max-height: 150px;
   overflow-y: auto;
-  padding-block: 10px;
+  padding: 10px;
 }

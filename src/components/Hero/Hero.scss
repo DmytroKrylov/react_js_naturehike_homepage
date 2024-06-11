@@ -212,4 +212,31 @@
       padding: 10px 50px;
     }
   }
+
+  &__search {
+    display: none;
+
+    @include on-desktop {
+      position: absolute;
+      bottom: 5%;
+      right: 5%;
+      display: flex;
+      justify-content: center;
+      align-items: center; // Добавлено для центрирования по вертикали
+      height: 37px;
+      width: 37px;
+      border-radius: 50%;
+      background-color: rgba(255, 255, 255, 0.5);
+
+      &::after {
+        display: block;
+        content: "";
+        background-image: url(/public/images/search.svg);
+        width: 20px;
+        height: 20px;
+        background-size: contain; // Добавлено для корректного отображения фона
+        background-repeat: no-repeat; // Добавлено для корректного отображения фона
+      }
+    }
+  }
 }

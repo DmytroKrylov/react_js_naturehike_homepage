@@ -58,6 +58,7 @@ export const Hero = () => {
         <a className="hero__link" href="#">
           Перейти
         </a>
+        <a className="hero__search" href="#"></a>
       </div>
     </section>
   );

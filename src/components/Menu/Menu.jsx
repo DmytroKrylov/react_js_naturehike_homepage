@@ -1,19 +1,46 @@
-import { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-
+import { useState, useEffect } from "react";
 import "./Menu.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isToggleEnabled, setIsToggleEnabled] = useState(
+    window.innerWidth < 1270
+  );
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
+    if (isToggleEnabled) {
+      setIsOpen(!isOpen);
+    }
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsToggleEnabled(window.innerWidth < 1270);
+      if (window.innerWidth >= 1270) {
+        setIsOpen(true); // Відкрити меню, якщо ширина більше 1270
+      } else {
+        setIsOpen(false); // Закрити меню, якщо ширина менше 1270
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    // Викликати handleResize одразу після монтування компонента
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <section className="menu__section">
       <div className="menu container">
-        <div className="menu__toggle" onClick={toggleMenu}>
+        <div
+          className={`menu__toggle ${!isToggleEnabled ? "disabled" : ""}`}
+          onClick={toggleMenu}
+        >
           <span className="menu__button">Каталог товаров</span>
         </div>
         <ul className={`menu__list ${isOpen ? "open" : ""}`}>
