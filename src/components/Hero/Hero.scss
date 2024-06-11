@@ -104,6 +104,73 @@
     align-content: center;
   }
 
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: end;
+  }
+
+  &__bottom {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      gap: 25px;
+    }
+  }
+
+  &__topFlex {
+    display: none;
+
+    @include on-desktop {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+  }
+
+  &__tel {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21.5px;
+    color: white;
+  }
+
+  &__langFlex {
+    display: flex;
+    gap: 5px;
+  }
+
+  &__lang {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 21.5px;
+    color: #b0b0b0;
+  }
+
+  &__line::after {
+    content: "";
+    display: block;
+    border-top: 20px solid white;
+    width: 2px;
+  }
+
+  &__accaunt {
+    background-image: url(/public/images/accaunt.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: block;
+    width: 20px;
+    height: 20px;
+  }
+
   &__title {
     font-family: "Intro Demo";
     font-size: 30px;

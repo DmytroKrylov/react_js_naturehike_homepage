@@ -30,10 +30,6 @@ export const Gallery = () => {
             slidesPerView: 3,
             spaceBetween: 50,
           },
-          // 1270: {
-          //   slidesPerView: 4,
-          //   spaceBetween: 50,
-          // },
         }}
         cssMode={true}
         navigation={true}

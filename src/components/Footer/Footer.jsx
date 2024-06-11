@@ -178,7 +178,7 @@ export const Footer = () => {
                 UA
               </a>
             </li>
-            <span className="footer__span">|</span>
+            <span className="footer__span"></span>
             <li>
               <a className="footer__lang" href="#">
                 RU

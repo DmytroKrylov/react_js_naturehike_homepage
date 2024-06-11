@@ -131,7 +131,10 @@
     color: rgba(255, 255, 255, 1);
   }
 
-  &__span {
-    color: rgba(255, 255, 255, 1);
+  &__span::after {
+    content: "";
+    display: block;
+    border-top: 20px solid white;
+    width: 2px;
   }
 }

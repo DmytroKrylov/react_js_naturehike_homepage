@@ -1,3 +1,9 @@
+@mixin on-desktop {
+  @media (min-width: 1270px) {
+    @content;
+  }
+}
+
 .swiper-pagination {
   position: unset;
 }
@@ -8,8 +14,13 @@
 
 .swiper-pagination-bullet {
   background-color: rgba(68, 0, 5, 0.7);
-  width: 14px;
-  height: 14px;
+  width: 8px;
+  height: 8px;
+
+  @include on-desktop {
+    height: 14px;
+    width: 14px;
+  }
 }
 
 .swiper-pagination-bullet-active {
